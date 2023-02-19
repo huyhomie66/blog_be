@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": " nodemon  app/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "seed": "node ./database/seed/blog.ts "
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.6.0",

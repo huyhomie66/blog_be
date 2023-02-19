@@ -5,7 +5,7 @@ require("dotenv").config();
 const prisma = new PrismaClient();
 
 async function main() {
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 100; i++) {
     await prisma.blog.create({
       data: {
         title: faker.internet.domainName(),
