@@ -6,7 +6,7 @@
     "dev": " nodemon  app/index.ts",
     "test": "jest",
     "seed": "node ./database/seed/blog.ts ",
-    "prisma-gen": "prisma generate"
+    "prisma-gen": "prisma generate --schema=database/prisma/blog.prisma"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.6.0",
