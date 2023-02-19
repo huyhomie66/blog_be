@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": " nodemon  app/index.ts",
-    "start": "node app/index.ts",
+    "start": "ts-node app/index.ts",
     "test": "jest",
     "seed": "node ./database/seed/blog.ts ",
     "prisma-gen": "prisma generate --schema=database/prisma/blog.prisma"

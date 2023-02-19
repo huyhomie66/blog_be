@@ -245,6 +245,6 @@ app.get("/search-full-text", async (req: Request, res: Response) => {
 
 const server = http.createServer(app);
 
-server.listen(3000, () => {
-  console.log("Server is running on http://localhost:8888");
+server.listen(process.env.PORT, () => {
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
