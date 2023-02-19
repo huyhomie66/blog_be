@@ -1,17 +1,19 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim-buster
+# Use a Node.js base image
+FROM node:14
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy the package.json and package-lock.json files to the container
+COPY package*.json ./
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Install the project dependencies
+RUN npm install
+RUN npm run prisma-gen
 
-# Expose port 5000 for the Flask app to listen on
-EXPOSE 5000
 
-# Run the command to start the Flask app
-CMD ["python", "app.py"]
+# Copy the rest of the project files to the container
+COPY . .
+
+# Set the container to run the "dev" script by default
+CMD [ "npm", "run", "dev" ]
